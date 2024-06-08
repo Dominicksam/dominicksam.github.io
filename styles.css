@@ -8,7 +8,6 @@ body
         height: 100%;
         overflow-x: hidden;
         object-fit: contain;
-    
 
     }
 
@@ -31,7 +30,7 @@ body
             justify-content: space-between;
             align-items: center;
             background-color:white;
-            padding: 50px;
+            padding: 5px;
         }
 
         .navbar-item {
