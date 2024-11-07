@@ -89,25 +89,60 @@ section h2 {
 /* Skills section */
 #skills ul {
     padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Space between skill items */
 }
 
 #skills li {
     list-style: none;
     font-size: 1.1em;
+    padding: 5px 10px;
+    border: 1px solid #0d6efd;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
 }
 
 #skills li i {
     color: #0d6efd;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 /* Projects section */
+/* Projects section */
+#projects .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between project cards */
+    justify-content: center; /* Center the project cards */
+}
+
+#projects .col-md-4 {
+    flex: 1 1 300px; /* Each project card takes up minimum width of 300px */
+    max-width: 350px; /* Maximum width of each project card */
+    background-color: #f8f9fa;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#projects .col-md-4:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
 #projects h3 {
     color: #0d6efd;
+    margin-bottom: 10px;
 }
 
 #projects p {
     font-size: 0.95em;
+    margin-bottom: 15px;
 }
 
 #projects .btn-outline-primary {
@@ -121,6 +156,7 @@ section h2 {
     background-color: #071831;
     color: white;
 }
+
 
 /* Experience section */
 #experience h3 {
