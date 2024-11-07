@@ -1,264 +1,184 @@
-/* General Body Styling */
+/* Basic styling for the entire page */
 body {
     font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: white;
-    display: flex;
-    flex-direction: row;
-    margin: 0;
-    padding: 0;
+    color: #333;
 }
 
-#proname{
-    font-style: italic;
-    font-size: larger;
-    color: #e9c46a;
-}
-
-h1{
-    font-size: larger;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: red;
-    font-weight: 700;
-
-}
-
-/* Sidebar Styling */
+/* Sidebar styling */
 #sidebar {
-    width: 250px;
-    background-color: #1a1a1a;
-    padding: 20px;
     position: fixed;
-    height: 100%;
     top: 0;
     left: 0;
-}
-
-#sidebar .profile {
-    text-align: center;
-    margin-bottom: 20px;
+    width: 250px;
+    height: 100%;
+    background-color: #212529;
+    color: #f8f9fa;
+    padding-top: 20px;
 }
 
 #sidebar .profile img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
+    width: 100px;
+    border: 2px solid #fff;
 }
 
-#sidebar .profile h3 {
-    margin: 10px 0;
-    font-size: 1.2rem;
-}
-
-#sidebar .profile p {
-    color: #ccc;
+#sidebar h1 {
+    font-size: 1.5em;
 }
 
 #sidebar nav ul {
     list-style: none;
     padding: 0;
+    margin-top: 30px;
 }
 
-#sidebar nav ul li {
-    margin: 10px 0;
-}
-
-#sidebar nav ul li a {
-    color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-}
-
-#sidebar nav ul li a i {
-    margin-right: 10px;
-}
-
-#sidebar .social-links {
-    margin-top: 20px;
-    text-align: center;
-}
-
-#sidebar .social-links a {
-    color: white;
-    margin: 0 10px;
-    font-size: 1.5rem;
-}
-
-#sidebar .social-links a:hover {
-    color: #264653;
-}
-
-/* Main Content Styling */
-#main-content {
-    margin-left: 250px;
-    padding: 30px;
-    width: calc(100% - 250px);
-}
-
-header {
-    text-align: center;
-    padding: 50px;
-    background-color: #264653;
-}
-
-header .navbar ul {
-    list-style: none;
-    padding: 10;
-    display: flex;
-    justify-content: center;
-}
-
-header .navbar ul li {
-    margin: 0 15px;
-}
-
-header .navbar ul li a {
-    color: white;
-    text-decoration: none;
+#sidebar nav a {
+    color: #adb5bd;
     font-weight: bold;
 }
 
-header .navbar ul li a:hover {
-    color: #e9c46a;
-}
-
-header .header-content {
-    margin-top: 20px;
-}
-
-header .header-content h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-header .header-content p {
-    font-size: 1rem;
-}
-
-/* Section Styling */
-.section {
-    margin: 40px 0;
-    justify-content: center;
-    padding: 20px;
-}
-
-h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.project-item, .experience-item {
-    background-color: #1a1a1a;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: background-color 0.3s ease;
-}
-
-.project-item:hover, .experience-item:hover {
-    background-color: #264653;
-}
-
-.project-item a, .experience-item a {
-    color: #e9c46a;
-    text-decoration: none;
-    margin-top: 10px;
-}
-
-/* Skills List Styling 
-.skills-list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.skills-list li {
-    background-color: #1a1a1a;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-}
-
-.skills-list li i {
-    margin-right: 10px;
-    font-size: 1.5rem;
-}
-
-.skills-list li:hover {
-    background-color: #264653;
-}
-
-/* Hover effects on skills 
-.skills-list li:hover i {
-    color: #e9c46a;
-}
-*/
-
-/* General Skills Section */
-#skills, #hobbies {
-    background-color: #1a1a1a;
+#sidebar nav a:hover {
     color: #fff;
-    padding: 40px;
 }
 
-#skills h3, #hobbies h3 {
-    color: #e9c46a;
-    margin-top: 20px;
+#sidebar .social-links a {
+    font-size: 1.5em;
+    color: #adb5bd;
+    transition: color 0.3s;
 }
 
-.skills-list, .hobbies-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+#sidebar .social-links a:hover {
+    color: #0d6efd;
+}
+
+/* Main content area styling */
+#main-content {
+    margin-left: 270px;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #071e42;
+    color: white;
+    padding: 20px 10px;
+    flex-grow: calc();
+}
+
+header h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+/* Section headings */
+section h2 {
+    font-size: 2em;
+    color: #0d6efd;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #0d6efd;
+    padding-bottom: 10px;
+}
+
+/* Skills section */
+#skills ul {
     padding-left: 0;
-    list-style-type: none;
 }
 
-.skills-list li, .hobbies-list li {
-    background-color: #264653;
-    padding: 10px;
-    border-radius: 5px;
-    width: calc(33% - 15px);
-    color: #fff;
-    display: flex;
-    align-items: center;
+#skills li {
+    list-style: none;
+    font-size: 1.1em;
 }
 
-.skills-list li i, .hobbies-list li i {
+#skills li i {
+    color: #0d6efd;
     margin-right: 10px;
-    font-size: 20px;
 }
 
-/* Adjust for small screens */
+/* Projects section */
+#projects h3 {
+    color: #0d6efd;
+}
+
+#projects p {
+    font-size: 0.95em;
+}
+
+#projects .btn-outline-primary {
+    border-color: #0d6efd;
+    color: #0d6efd;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#projects .btn-outline-primary:hover {
+    background-color: #071831;
+    color: white;
+}
+
+/* Experience section */
+#experience h3 {
+    color: #495057;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+#experience p {
+    font-size: 0.95em;
+    color: #6c757d;
+}
+
+/* Hobbies section */
+#hobbies p {
+    font-size: 1.1em;
+}
+
+#hobbies i {
+    color: #0d6efd;
+    margin-right: 10px;
+}
+
+/* Contact section */
+#contact a {
+    color: #0d6efd;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+    font-size: 0.9em;
+}
+
+/* Media queries for responsive adjustments */
 @media (max-width: 768px) {
-    .skills-list li, .hobbies-list li {
-        width: calc(50% - 15px);
-    }
-}
-
-@media (max-width: 480px) {
-    .skills-list li, .hobbies-list li {
+    #sidebar {
         width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    #main-content {
+        margin-left: 0;
+    }
+
+    header {
+        padding: 40px 10px;
+    }
+
+    header h2 {
+        font-size: 2em;
+    }
+
+    #sidebar .profile img {
+        width: 80px;
     }
 }
-
-/* Hover Effect */
-.skills-list li:hover, .hobbies-list li:hover {
-    background-color: #e9c46a;
-    cursor: pointer;
-}
-
