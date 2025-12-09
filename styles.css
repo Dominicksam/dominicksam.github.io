@@ -1,7 +1,56 @@
 /* Basic styling for the entire page */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
+    line-height: 1.6;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    background: #212529;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.mobile-menu-toggle:hover span {
+    background: #0d6efd;
+}
+
+/* Sidebar Overlay */
+#sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+#sidebar-overlay.show {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Sidebar styling */
@@ -9,95 +58,277 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 250px;
+    width: 280px;
     height: 100%;
     background-color: #212529;
     color: #f8f9fa;
-    padding-top: 20px;
+    padding: 20px;
     overflow-y: auto;
     z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-close {
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.sidebar-close:hover {
+    background: rgba(255, 255, 255, 0.1);
 }
 
 #sidebar .profile img {
-    width: 100px;
-    border: 2px solid #fff;
+    width: 120px;
+    height: 120px;
+    border: 3px solid #fff;
+    object-fit: cover;
 }
 
 #sidebar h1 {
-    font-size: 1.5em;
+    font-size: 1.4em;
+    margin: 15px 0 5px;
+}
+
+#sidebar .profile p {
+    font-size: 0.9em;
+    color: #adb5bd;
+    margin-bottom: 20px;
 }
 
 #sidebar nav ul {
     list-style: none;
     padding: 0;
-    margin-top: 30px;
+    margin: 30px 0 20px;
+}
+
+#sidebar nav li {
+    margin-bottom: 5px;
 }
 
 #sidebar nav a {
     color: #adb5bd;
-    font-weight: bold;
-    display: block;
-    padding: 10px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+#sidebar nav a i {
+    width: 20px;
+    margin-right: 10px;
 }
 
 #sidebar nav a:hover {
     color: #fff;
     background-color: #0d6efd;
+    transform: translateX(5px);
+}
+
+#sidebar .social-links {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #495057;
 }
 
 #sidebar .social-links a {
     font-size: 1.5em;
     color: #adb5bd;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
+    display: inline-block;
+    margin: 0 8px;
 }
 
 #sidebar .social-links a:hover {
     color: #0d6efd;
+    transform: translateY(-2px);
 }
 
 /* Main content area styling */
 #main-content {
-    margin-left: 270px;
+    margin-left: 300px;
     padding: 20px;
+    min-height: 100vh;
 }
 
 /* Header */
 header {
-    background-color: #071e42;
+    background: linear-gradient(135deg, #071e42 0%, #0d6efd 100%);
     color: white;
-    padding: 20px 10px;
+    padding: 40px 20px;
+    margin: 0 -20px 40px -20px;
+    border-radius: 0 0 20px 20px;
 }
 
 header h2 {
     font-size: 2.5em;
-    font-weight: bold;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+header .lead {
+    font-size: 1.3em;
+    font-weight: 300;
+    margin-bottom: 15px;
 }
 
 header p {
-    font-size: 1.2em;
+    font-size: 1.1em;
+    opacity: 0.9;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 /* Section headings */
+section {
+    scroll-margin-top: 80px;
+}
+
 section h2 {
-    font-size: 2em;
+    font-size: 2.2em;
     color: #0d6efd;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #0d6efd;
-    padding-bottom: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+    font-weight: 600;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #0d6efd, #071e42);
+    border-radius: 2px;
+}
+
+/* Card Styles */
+.skill-card, .project-card, .experience-card, .hobby-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.skill-card:hover, .project-card:hover, .experience-card:hover, .hobby-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.skill-card h3, .project-card h3, .experience-card h3 {
+    color: #0d6efd;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    font-weight: 600;
 }
 
 /* Skills section */
 #skills ul {
     padding-left: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px; /* Space between skill items */
+    margin: 0;
 }
 
 #skills li {
     list-style: none;
+    font-size: 1em;
+    padding: 8px 15px;
+    margin: 8px 0;
+    border: 2px solid #e9ecef;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+#skills li:hover {
+    border-color: #0d6efd;
+    background: #e7f3ff;
+    transform: translateX(5px);
+}
+
+#skills li i {
+    color: #0d6efd;
+    margin-right: 10px;
+    font-size: 1.2em;
+    width: 20px;
+}
+
+/* Projects section */
+.project-card p {
+    font-size: 1em;
+    color: #6c757d;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.project-card .btn {
+    margin-top: auto;
+    border-radius: 25px;
+    padding: 10px 25px;
+    font-weight: 600;
+    border: 2px solid #0d6efd;
+    transition: all 0.3s ease;
+}
+
+.project-card .btn:hover {
+    background-color: #0d6efd;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Experience section */
+.experience-card .company {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 5px;
+}
+
+.experience-card .location {
+    font-size: 0.9em;
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Hobbies section */
+.hobby-card {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.hobby-card i {
+    color: #0d6efd;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.hobby-card:hover i {
+    transform: scale(1.1);
+    color: #071e42;
+}
+
+.hobby-card p {
     font-size: 1.1em;
-    padding: 5px 10px;
+    font-weight: 500;
+    margin: 0;
+    color: #495057;
+}
     border: 1px solid #0d6efd;
     border-radius: 5px;
     display: inline-flex;
@@ -159,39 +390,224 @@ section h2 {
 
 
 /* Experience section */
-#experience h3 {
+.experience-card .company {
+    font-weight: 600;
     color: #495057;
-    font-size: 1.2em;
-    margin-top: 20px;
+    margin-bottom: 5px;
 }
 
-#experience p {
-    font-size: 0.95em;
+.experience-card .location {
+    font-size: 0.9em;
     color: #6c757d;
-}
-
-/* Hobbies section */
-#hobbies p {
-    font-size: 1.1em;
-}
-
-#hobbies i {
-    color: #0d6efd;
-    margin-right: 10px;
+    font-style: italic;
 }
 
 /* Contact section */
+#contact {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 15px;
+    margin: 40px 0;
+}
+
+#contact p {
+    font-size: 1.2em;
+    color: #495057;
+}
+
 #contact a {
     color: #0d6efd;
-    font-weight: bold;
+    font-weight: 600;
     text-decoration: none;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
 }
 
 #contact a:hover {
-    text-decoration: underline;
+    color: #071e42;
+    border-bottom-color: #071e42;
 }
 
 /* Footer */
 footer {
-    background-color: #343a40;
+    background: linear-gradient(135deg, #343a40 0%, #212529 100%);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin: 40px -20px 0 -20px;
+    border-radius: 20px 20px 0 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+/* Responsive Design */
+@media (max-width: 1199.98px) {
+    #main-content {
+        margin-left: 280px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    body.sidebar-open {
+        overflow: hidden;
+    }
+    
+    #sidebar {
+        transform: translateX(-100%);
+    }
+    
+    #sidebar.show {
+        transform: translateX(0);
+    }
+    
+    .sidebar-close {
+        display: block;
+    }
+    
+    #main-content {
+        margin-left: 0;
+        padding: 80px 20px 20px;
+    }
+    
+    header {
+        margin: -60px -20px 40px -20px;
+        padding: 80px 20px 40px;
+    }
+    
+    header h2 {
+        font-size: 2em;
+    }
+    
+    header .lead {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 767.98px) {
+    #sidebar {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    header h2 {
+        font-size: 1.8em;
+    }
+    
+    header .lead {
+        font-size: 1em;
+    }
+    
+    section h2 {
+        font-size: 1.8em;
+    }
+    
+    .skill-card, .project-card, .experience-card, .hobby-card {
+        padding: 20px;
+    }
+    
+    .hobby-card {
+        padding: 25px 15px;
+    }
+    
+    .hobby-card i {
+        font-size: 2.5em !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    #main-content {
+        padding: 70px 15px 15px;
+    }
+    
+    header {
+        margin: -55px -15px 30px -15px;
+        padding: 70px 15px 30px;
+    }
+    
+    header h2 {
+        font-size: 1.6em;
+    }
+    
+    section h2 {
+        font-size: 1.6em;
+        margin-bottom: 25px;
+    }
+    
+    .skill-card, .project-card, .experience-card, .hobby-card {
+        padding: 15px;
+    }
+    
+    #sidebar .profile img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    #sidebar h1 {
+        font-size: 1.2em;
+    }
+    
+    #sidebar nav a {
+        padding: 10px 12px;
+        font-size: 0.9em;
+    }
+    
+    footer {
+        margin: 30px -15px 0 -15px;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus states for accessibility */
+.mobile-menu-toggle:focus,
+#sidebar nav a:focus,
+.btn:focus {
+    outline: 2px solid #0d6efd;
+    outline-offset: 2px;
+}
+
+/* Loading animation for better UX */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skill-card, .project-card, .experience-card, .hobby-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Print styles */
+@media print {
+    #sidebar,
+    .mobile-menu-toggle,
+    #sidebar-overlay {
+        display: none;
+    }
+    
+    #main-content {
+        margin-left: 0;
+    }
+    
+    .skill-card, .project-card, .experience-card, .hobby-card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+    }
 }

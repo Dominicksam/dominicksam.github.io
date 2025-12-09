@@ -12,8 +12,18 @@
 </head>
 <body class="bg-light">
 
+<!-- Mobile Menu Toggle -->
+<button class="mobile-menu-toggle d-lg-none" onclick="toggleSidebar()" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
 <!-- Sidebar -->
 <aside id="sidebar" class="bg-dark text-light py-4 px-3">
+    <div class="sidebar-close d-lg-none" onclick="toggleSidebar()">
+        <i class="fas fa-times"></i>
+    </div>
     <div class="profile text-center">
         <img src="profile.jpg.png" alt="Dominic Akpan" class="rounded-circle mb-2" width="120">
         <h1>Dominic Akpan</h1>
@@ -37,48 +47,57 @@
     </div>
 </aside>
 
+<!-- Overlay for mobile sidebar -->
+<div id="sidebar-overlay" class="d-lg-none" onclick="toggleSidebar()"></div>
+
 <!-- Main Content -->
-<main id="main-content" class="container-fluid">
+<main id="main-content">
     <!-- Header Section -->
-    <header class="bg-primary text-white text-center py-5 mb-4">
+    <header class="bg-primary text-white text-center py-4 py-lg-5 mb-4">
         <div class="container">
-            <h2>Dominic Samuel Akpan</h2>
+            <h2 class="display-4 display-lg-3">Dominic Samuel Akpan</h2>
             <p class="lead">Mechanical and Software Engineer | Project, Maintenance, and Automotive Repair</p>
-            <p>I’m a versatile engineer with expertise in Project, Fleet, Maintenance and Operations management, and automobile repair, combining engineering with new software development skills to create innovative solutions.</p>
+            <p class="d-none d-md-block">I'm a versatile engineer with expertise in Project, Fleet, Maintenance and Operations management, and automobile repair, combining engineering with new software development skills to create innovative solutions.</p>
         </div>
     </header>
 
     <!-- Skills Section -->
     <section id="skills" class="container mb-5">
         <h2 class="text-center mb-4">Skills</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <h3>Technical Skills</h3>
-                <ul class="list-unstyled">
-                    <li><i class="fab fa-python"></i> Python</li>
-                    <li><i class="fab fa-js-square"></i> JavaScript</li>
-                    <li><i class="fab fa-react"></i> React</li>
-                    <li><i class="fas fa-cogs"></i> Django</li>
-                    <li><i class="fas fa-cloud"></i> AWS</li>
-                    <li><i class="fas fa-database"></i> SQL</li>
-                </ul>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="skill-card h-100">
+                    <h3>Technical Skills</h3>
+                    <ul class="list-unstyled">
+                        <li><i class="fab fa-python"></i> Python</li>
+                        <li><i class="fab fa-js-square"></i> JavaScript</li>
+                        <li><i class="fab fa-react"></i> React</li>
+                        <li><i class="fas fa-cogs"></i> Django</li>
+                        <li><i class="fas fa-cloud"></i> AWS</li>
+                        <li><i class="fas fa-database"></i> SQL</li>
+                    </ul>
+                </div>
             </div>
-            <div class="col-md-4">
-                <h3>Soft Skills</h3>
-                <ul class="list-unstyled">
-                    <li><i class="fas fa-users"></i> Leadership</li>
-                    <li><i class="fas fa-comments"></i> Communication</li>
-                    <li><i class="fas fa-lightbulb"></i> Problem-Solving</li>
-                    <li><i class="fas fa-clock"></i> Time Management</li>
-                </ul>
+            <div class="col-lg-4 col-md-6">
+                <div class="skill-card h-100">
+                    <h3>Soft Skills</h3>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-users"></i> Leadership</li>
+                        <li><i class="fas fa-comments"></i> Communication</li>
+                        <li><i class="fas fa-lightbulb"></i> Problem-Solving</li>
+                        <li><i class="fas fa-clock"></i> Time Management</li>
+                    </ul>
+                </div>
             </div>
-            <div class="col-md-4">
-                <h3>Hands-on Skills</h3>
-                <ul class="list-unstyled">
-                    <li><i class="fas fa-wrench"></i> Automobile Repairs</li>
-                    <li><i class="fas fa-tools"></i> Equipment Installations</li>
-                    <li><i class="fab fa-robot"></i> PLC, HMI, SCADA, and Automation</li>
-                </ul>
+            <div class="col-lg-4 col-md-12">
+                <div class="skill-card h-100">
+                    <h3>Hands-on Skills</h3>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-wrench"></i> Automobile Repairs</li>
+                        <li><i class="fas fa-tools"></i> Equipment Installations</li>
+                        <li><i class="fab fa-robot"></i> PLC, HMI, SCADA, and Automation</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -86,21 +105,48 @@
     <!-- Projects Section -->
     <section id="projects" class="container mb-5">
         <h2 class="text-center mb-4">Projects</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <h3>IVMS System</h3>
-                <p>Developed a real-time vehicle tracking system using AI algorithms for driver behavior monitoring.</p>
-                <a href="https://www.fleetomatic.io/" class="btn btn-outline-primary">View Project</a>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="project-card h-100">
+                    <h3>Azure .NET Web App</h3>
+                    <p>Enterprise web application built with ASP.NET Core and deployed on Microsoft Azure cloud platform with CI/CD pipeline integration.</p>
+                    <a href="#" class="btn btn-outline-primary" target="_blank">View Project</a>
+                </div>
             </div>
-            <div class="col-md-4">
-                <h3>Quiz App</h3>
-                <p>Quiz application with user tracking and score results, utilizing Django and a REST API backend.</p>
-                <a href="https://github.com/Dominicksam/ALX-Portfolio-Project--Quiz-App" class="btn btn-outline-primary">View Project</a>
+            <div class="col-lg-4 col-md-6">
+                <div class="project-card h-100">
+                    <h3>Power BI Dashboard</h3>
+                    <p>Interactive business intelligence dashboard with real-time data visualization, KPI tracking, and automated reporting features.</p>
+                    <a href="#" class="btn btn-outline-primary" target="_blank">View Dashboard</a>
+                </div>
             </div>
-            <div class="col-md-4">
-                <h3>Maze Game</h3>
-                <p>3D maze game using SDL2 and C for real-time 3D graphics rendering on a 2D map.</p>
-                <a href="https://github.com/Dominicksam/Maze_Project_ALX" class="btn btn-outline-primary">View Project</a>
+            <div class="col-lg-4 col-md-6">
+                <div class="project-card h-100">
+                    <h3>Apache Superset Analytics</h3>
+                    <p>Modern data exploration and visualization platform with custom dashboards for business intelligence and data analytics.</p>
+                    <a href="#" class="btn btn-outline-primary" target="_blank">View Project</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="project-card h-100">
+                    <h3>IVMS System</h3>
+                    <p>Developed a real-time vehicle tracking system using AI algorithms for driver behavior monitoring.</p>
+                    <a href="https://www.fleetomatic.io/" class="btn btn-outline-primary" target="_blank">View Project</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="project-card h-100">
+                    <h3>Quiz App</h3>
+                    <p>Quiz application with user tracking and score results, utilizing Django and a REST API backend.</p>
+                    <a href="https://github.com/Dominicksam/ALX-Portfolio-Project--Quiz-App" class="btn btn-outline-primary" target="_blank">View Project</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="project-card h-100">
+                    <h3>Maze Game</h3>
+                    <p>3D maze game using SDL2 and C for real-time 3D graphics rendering on a 2D map.</p>
+                    <a href="https://github.com/Dominicksam/Maze_Project_ALX" class="btn btn-outline-primary" target="_blank">View Project</a>
+                </div>
             </div>
         </div>
     </section>
@@ -108,18 +154,27 @@
     <!-- Experience Section -->
     <section id="experience" class="container mb-5">
         <h2 class="text-center mb-4">Experience</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <h3>Software Engineering Intern</h3>
-                <p>ALX Africa | Remote | July 2023 - Present</p>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="experience-card h-100">
+                    <h3>Software Engineering Intern</h3>
+                    <p class="company">ALX Africa</p>
+                    <p class="location">Remote | July 2023 - Present</p>
+                </div>
             </div>
-            <div class="col-md-4">
-                <h3>Projects Engineer</h3>
-                <p>POK Integrated Services | Lagos, Nigeria | July 2022 - Present</p>
+            <div class="col-lg-4 col-md-6">
+                <div class="experience-card h-100">
+                    <h3>Projects Engineer</h3>
+                    <p class="company">POK Integrated Services</p>
+                    <p class="location">Lagos, Nigeria | July 2022 - Present</p>
+                </div>
             </div>
-            <div class="col-md-4">
-                <h3>Maintenance Engineer/HSSE Officer</h3>
-                <p>Truckmasters Nig Ltd | Lagos, Nigeria | Nov 2018 - July 2022</p>
+            <div class="col-lg-4 col-md-12">
+                <div class="experience-card h-100">
+                    <h3>Maintenance Engineer/HSSE Officer</h3>
+                    <p class="company">Truckmasters Nig Ltd</p>
+                    <p class="location">Lagos, Nigeria | Nov 2018 - July 2022</p>
+                </div>
             </div>
         </div>
     </section>
@@ -127,10 +182,25 @@
     <!-- Hobbies Section -->
     <section id="hobbies" class="container mb-5">
         <h2 class="text-center mb-4">Hobbies</h2>
-        <div class="row">
-            <div class="col-md-4"><p><i class="fas fa-laptop-code"></i> Learning New Skills</p></div>
-            <div class="col-md-4"><p><i class="fas fa-music"></i> Music – Piano & Saxophone</p></div>
-            <div class="col-md-4"><p><i class="fas fa-basketball-ball"></i> Sports (Basketball, Football)</p></div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="hobby-card text-center h-100">
+                    <i class="fas fa-laptop-code fa-3x mb-3"></i>
+                    <p>Learning New Skills</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="hobby-card text-center h-100">
+                    <i class="fas fa-music fa-3x mb-3"></i>
+                    <p>Music – Piano & Saxophone</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="hobby-card text-center h-100">
+                    <i class="fas fa-basketball-ball fa-3x mb-3"></i>
+                    <p>Sports (Basketball, Football)</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -147,5 +217,39 @@
 
 <!-- Bootstrap JS -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        
+        sidebar.classList.toggle('show');
+        overlay.classList.toggle('show');
+        document.body.classList.toggle('sidebar-open');
+    }
+
+    // Close sidebar when clicking on navigation links on mobile
+    document.querySelectorAll('#sidebar .nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth < 992) {
+                toggleSidebar();
+            }
+        });
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
 </body>
 </html>
