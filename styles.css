@@ -170,8 +170,8 @@ body {
 
 .profile-section {
     display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 30px;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
     padding: 20px 60px;
     position: relative;
     z-index: 2;
@@ -181,13 +181,25 @@ body {
     align-items: start;
 }
 
+.profile-left {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+
+.profile-sidebar {
+    width: 100%;
+}
+
 .profile-image-large {
     flex-shrink: 0;
+    text-align: center;
 }
 
 .profile-image-large img {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 15px 40px rgba(0,0,0,0.5);
@@ -256,9 +268,10 @@ body {
 
 .quick-info {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr;
     gap: 15px;
-    margin: 15px 0;
+    margin: 0 0 25px 0;
+    width: 100%;
 }
 
 .quick-info .info-item {
@@ -393,23 +406,27 @@ body {
 /* Action Buttons */
 .action-buttons {
     display: flex;
-    gap: 15px;
-    margin-top: 25px;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 0;
+    width: 100%;
 }
 
 .btn {
-    padding: 12px 25px;
+    padding: 12px 20px;
     border-radius: 25px;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.9rem;
     letter-spacing: 1px;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     text-decoration: none;
+    width: 100%;
 }
 
 .btn-primary {
@@ -761,13 +778,33 @@ body {
         text-align: center;
     }
     
+    .profile-left {
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .profile-sidebar {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
     .profile-image-large {
         justify-self: center;
     }
     
     .profile-image-large img {
-        width: 150px;
-        height: 150px;
+        width: 160px;
+        height: 160px;
+    }
+    
+    .quick-info {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .action-buttons {
+        flex-direction: row;
+        gap: 10px;
     }
     
     .profile-info h1 {
